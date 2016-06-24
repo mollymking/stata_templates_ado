@@ -38,6 +38,14 @@ set more offset virtual onset mem 1700Mcd $cleandata
 
 use
 
+// Template for variable creation
+// replace VAR with actual variable name
+generate VAR =
+  label var VAR  " "
+  label val VAR
+  notes VAR: {SHORT NOTE VARIABLE MEANING} \ {NAME OF THIS FILE}.do mmk 201X-XX-XX
+    // This includes a note in the dataset about the creation of this variable
+
 
 ***--------------------------***
 //  #2)
