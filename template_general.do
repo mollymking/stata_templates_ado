@@ -32,24 +32,31 @@ set linesize 80
 clear all
 macro drop _all
 set more offset virtual onset mem 1700Mcd $cleandata
+
 ***--------------------------***
+
 //  #1)
 //  (DESCRIBE TASK 1)
 
-use
+* LOAD DATA *
+// look at data information
+use {DATASET NAME}, clear
+notes _dta // info about what .do file created, date created, and .dta file content
+datasignature confirm // P. 141-142 WF book
+  // this indicates whether data dimensions have been changed since data signature last saved
 
-// Template for variable creation
-// replace VAR with actual variable name
-generate VAR =
-  label var VAR  " "
-  label val VAR
-  notes VAR: {SHORT NOTE VARIABLE MEANING} \ {NAME OF THIS FILE}.do mmk 201X-XX-XX
-    // This includes a note in the dataset about the creation of this variable
 
 
 ***--------------------------***
 //  #2)
 //  (DESCRIBE TASK 2)
+
+* LOAD DATA *
+// look at data information
+use {DATASET NAME}, clear
+notes _dta // info about what .do file created, date created, and .dta file content
+datasignature confirm // this indicates whether data dimensions have been changed since data signature last saved
+
 
 
 
