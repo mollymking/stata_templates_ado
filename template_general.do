@@ -30,7 +30,6 @@ log using $stata/logarchive/{LOG_NAME}.log
 version 13 // keeps program consistent for future replications
 set linesize 80
 clear all
-macro drop _all
 set more offset virtual onset mem 1700Mcd $cleandata
 
 ***--------------------------***
