@@ -1,12 +1,39 @@
 DATA MANAGEMENT TEMPLATE
 
-//  task:     reminders and code to remember for data management and cleaning best practices
-//  program:  data_management_template.do
+capture log close
+log using $stata/logarchive/{LOG_NAME}.log
 
-//  github:   stata_templates_ado
+OR
+
+**if using a master log file also
+capture log close
+log using {LOG_NAME}, name(NICKNAME) replace text
+
+***{COLLABORATION GROUP} - {PROJECT TITLE} - (PURPOSE OF DO-FILE}***
+
+// 	project:	
+//  task:     	reminders and code to remember for data management and cleaning best practices
+//  program:  	data_management_template.do
+//	log:      {LOG_NAME ABOVE}.log
+//  data:     {DATA SOURCE}, available: http://www.{WEBSITE}
+
+//  github:   	stata_templates_ado
 //  OSF:
 
-//  author:   Molly King
+//  author:   	Molly King
+//	collabs:  {COLLABORATOR NAMES, if any}
+
+display "$S_DATE  $S_TIME"
+
+
+
+// #0 Program setup
+version 13 // keeps program consistent for future replications
+set linesize 80
+clear all
+set more off
+
+cd $cleandata
 
 ***--------------------------***
 
@@ -58,3 +85,7 @@ describe [varlist] [if] [in] [, simple fullnames numbers]  // list var names, la
 describe, simple                                           // list all vars
 nmlab                                                      // list var names, labels
 tabulate
+
+
+log close {NICKNAME}
+exit
